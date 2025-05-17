@@ -1,0 +1,60 @@
+^Table1:
+Lic_no,Indus_id;
+CREATE TABLE Table1 (
+Lic_no INT PRIMARY KEY,
+Indus_id INT,
+FOREIGN KEY (Lic_no) REFERENCES R1 (Lic_no)
+);
+Table 2:
+Lic_no,contact_no;
+CREATE TABLE Table2 (
+Lic_no INT PRIMARY KEY,
+Contact_no INT,
+FOREIGN KEY (Lic_no) REFERENCES R1 (Lic_no)
+);
+
+Table3:
+Sector_id,Govt,Private;
+CREATE TABLE Table3 (
+  Sector_id INTEGER,
+  Govt CHAR(50),
+  Private CHAR(50)
+);
+Table4:
+Trade_code,inport,export;
+CREATE TABLE Table4 (
+  Trade_code INTEGER,
+  inport CHAR(50),
+  export CHAR(50),
+FOREIGN KEY (Trade_code) REFERENCES R3 (Trade_code)
+);
+
+
+Table5:
+Sector_id,trade_code;
+CREATE TABLE Table5 (
+  Sector_id INTEGER,
+  trade_code INTEGER,
+FOREIGN KEY (Sector_id) REFERENCES R3 (Sector_id)
+FOREIGN KEY (Trade_code) REFERENCES R3 (Trade_code)
+);
+
+^Table6:
+Src_id,quantity;
+CREATE TABLE Table6 (
+  Src_id INTEGER,
+  quantity INTEGER
+FOREIGN KEY (Src_id) REFERENCES R3 (Src_id)
+);
+
+
+Table7:
+Year,Market_value,quantity
+CREATE TABLE Table7 (
+  Year INTEGER PRIMARY KEY,
+  Market_value INTEGER,
+  quantity INTEGER
+);
+
+Sql queries for creating table
+

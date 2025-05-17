@@ -1,0 +1,15 @@
+Table1:
+Lic_no,Indus_id;
+Table 2:
+Lic_no,contact_no;
+Table3:
+Sector_id,Govt,Private;
+Table4:
+Trade_code,inport,export;
+Table5:
+Sector_id,trade_code;
+Table6:
+Src_id,quantity;
+Table7:
+Year,Market_value,quantity
+

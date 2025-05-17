@@ -1,0 +1,1 @@
+ CREATE TABLE Fertilizer_Industry(Lic_no INT PRIMARY KEY,Fact_no INT,Fact_Name VARCHAR(50) NOT NULL,Baseyear INT,Street VARCHAR(50) NOT NULL,Pincode INT);

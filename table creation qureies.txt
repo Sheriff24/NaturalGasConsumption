@@ -1,0 +1,13 @@
+*CREATE TABLE House_hold (house_id varchar(100) PRIMARY KEY,totalExpenditure varchar(20));
+
+*CREATE TABLE Food (f_id varchar(100) PRIMARY KEY,house_id varchar(100),FoodName varchar(20),consumption decimal,CONSTRAINT fk_houseid FOREIGN KEY(house_id)REFERENCES house_hold(house_id));
+
+*CREATE TABLE Energy_source (e_id varchar(100) PRIMARY KEY,house_id varchar(100),Electricity decimal,lpg decimal,motorFuel decimal,CONSTRAINT fk_energy_houseid FOREIGN KEY(house_id)REFERENCES house_hold(house_id));
+
+CREATE TABLE Hospital (m_id varchar(100) PRIMARY KEY,house_id varchar(100),PhysicianFee decimal,medicinalFee decimal,TotalFee decimal,Medicine varchar(100),CONSTRAINT fk_hospital_houseid FOREIGN KEY(house_id)REFERENCES house_hold(house_id));
+
+CREATE TABLE Education (s_id varchar(100) PRIMARY KEY,house_id varchar(100),TutitionFee decimal,SchoolSupplies decimal,CONSTRAINT fk_education_houseid FOREIGN KEY(house_id)REFERENCES house_hold(house_id));
+
+CREATE TABLE State_UT (name varchar(100),monthWise varchar(100),yearWise varchar(100), PRIMARY KEY(name,monthWise,yearWise),cpi decimal);
+
+CREATE TABLE Inflation (i_id varchar(100) PRIMARY KEY,name varchar(100),monthWise varchar(100),yearWise varchar(100),date varchar(10),percentage decimal,CONSTRAINT fk FOREIGN KEY(name,monthWise,yearWise)REFERENCES State_UT(name,monthWise,yearWise));
